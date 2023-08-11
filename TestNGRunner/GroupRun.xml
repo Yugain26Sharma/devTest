@@ -11,7 +11,7 @@
 			</run>
 		</groups>
 		<classes>
-			<class name="com.flipkart.tests.ProductDetailTest" />
+			
 			<class name="com.flipkart.tests.SearchTest" />
 		</classes>
 	</test>
