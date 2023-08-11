@@ -1,0 +1,9 @@
+{
+ "validPayment":{
+    "paymentMethod": "credit card",
+    "cardNumber": "12345678",
+    "validityMonth" : "12",
+    "validityYear" : "30",
+    "cvv" : "123",
+  }
+}

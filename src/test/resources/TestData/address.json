@@ -1,0 +1,18 @@
+{
+ "validAddress":{
+    "name": "Yugain Sharma",
+    "mobileNumber": "9051609333",
+    "pincode" : "175126",
+    "locality" : "mohal",
+    "city" : "kullu",
+    "state" : "Himachal Pradesh"
+  },
+  "inValidAddress":{
+    "name": "testUser",
+    "mobileNumber": "!@#$",
+    "pincode" : "ERTY",
+    "locality" : "mohal",
+    "city" : "kullu",
+    "state" : "Himachal Pradesh"
+  }
+}

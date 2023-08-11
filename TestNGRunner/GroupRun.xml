@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Flipkart Test Suite">
+	<listeners>
+		<listener class-name="com.flipkart.reporting.TestListener"></listener>
+	</listeners>
+
+	<test name="Sanity Test" >
+		<groups>
+			<run>
+				<include name="sanity"></include>
+			</run>
+		</groups>
+		<classes>
+			<class name="com.flipkart.tests.ProductDetailTest" />
+			<class name="com.flipkart.tests.SearchTest" />
+		</classes>
+	</test>
+</suite>

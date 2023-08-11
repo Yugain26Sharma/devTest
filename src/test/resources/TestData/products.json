@@ -1,0 +1,17 @@
+{
+ "regularProduct":{
+    "product1": "airpod",
+    "product2": "nike nk run swift 3",
+    "product3": "!@#$"
+  },
+  "highDemandProduct":{
+    "product1": "ps5 console",
+    "product2": "iphone 14"
+  },
+  "bestSellerProduct":{
+    "product1": "FIFA 23"
+  },
+    "invalidProduct":{
+    "product1": "!@#$%"
+  }
+}
