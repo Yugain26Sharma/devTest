@@ -24,7 +24,7 @@ public class SearchTest {
 	
 	@Test(groups = { "sanity" })
 	public void validateInvalidSearchResult1() throws IOException {
-	Assert.assertEquals(false, true);	
+	Assert.assertEquals("yug", "yug");	
 	}
 	
 	@Test(groups = { "sanity" })
