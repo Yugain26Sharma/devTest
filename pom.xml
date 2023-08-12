@@ -87,12 +87,7 @@
 
 
 	<distributionManagement>
-		<snapshotRepository>
-			<id>snapshots</id>
-			<name>yugainshrma01-snapshots</name>
-			<url>
-				http://localhost:8081/artifactory/devops-artifactory-libs-snapshot-local</url>
-		</snapshotRepository>
+	
 		<repository>
 			<id>central</id>
 			<name>yugainshrma01-releases</name>
