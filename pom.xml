@@ -14,7 +14,11 @@
 
 	<build>
 		<plugins>
-		
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.9.1.2184</version>
+			</plugin>
 
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -80,5 +84,14 @@
 			<version>2.4.0</version>
 		</dependency>
 	</dependencies>
+
+
+	<distributionManagement>
+		<repository>
+			<id>central</id>
+			<name>yugainshrma01-releases</name>
+			<url>http://localhost:8081/artifactory/flipkart-libs-release</url>
+		</repository>
+	</distributionManagement>
 </project>
 
