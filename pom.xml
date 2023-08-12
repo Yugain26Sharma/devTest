@@ -88,7 +88,7 @@
 
 	<distributionManagement>
 		<repository>
-			<id>central</id>
+			<id>flipkart-libs-release</id>
 			<name>yugainshrma01-releases</name>
 			<url>http://localhost:8082/artifactory/flipkart-libs-release</url>
 		</repository>
