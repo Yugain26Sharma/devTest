@@ -89,12 +89,12 @@
 	<distributionManagement>
 		<snapshotRepository>
 			<id>devops-artifactory-libs-snapshot-local</id>
-			<url>http://localhost:8082/artifactory/devops-artifactory-libs-snapshot-local</url>
+			<url>http://localhost:8082/artifactory/flipkart-libs-snapshot-local</url>
 		</snapshotRepository>
 
 		<repository>
 			<id>devops-artifactory-libs-release-local</id>
-			<url>http://localhost:8082/artifactory/devops-artifactory-libs-release-local</url>
+			<url>http://localhost:8082/artifactory/flipkart-libs-release-local</url>
 		</repository>
 	</distributionManagement>
 </project>
