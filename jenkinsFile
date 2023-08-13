@@ -1,0 +1,61 @@
+pipeline {
+    agent any
+
+  tools{
+        maven 'Maven3'
+        jdk 'JDK11'
+    }
+    
+    environment {
+        ARTIFACTORY_USERNAME = "admin"
+        ARTIFACTORY_PASSWORD = "Password@123"
+        SONAR_KEY = "e04e36012740b52e8cf20cccb61f71b40a0d4e42"
+    }
+    
+        triggers {
+        cron('H 9 * * *')
+    }
+
+
+    stages {
+        stage('Code Checkout') {
+            steps {
+                // Checkout the main branch from the Git repository
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/Yugain26Sharma/devTest.git']]])
+            }
+        }
+
+        stage('Compile and Test') {
+            steps {
+                catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+                    script {
+                         // Compile and run Selenium tests (adjust commands as needed)
+                         bat 'mvn clean install -f C:/ProgramData/Jenkins/.jenkins/workspace/nagpDevopsPipeLineJob'
+                    } 
+                }
+            }
+        }
+        
+        stage('SonarQube Analysis') {
+            steps {
+                catchError(buildResult: 'FAILURE', stageResult: 'FAILURE'){
+                    script {
+                         // Run SonarQube analysis
+                        bat 'mvn sonar:sonar -Dsonar.login="%SONAR_KEY%" -f C:/ProgramData/Jenkins/.jenkins/workspace/nagpDevopsPipeLineJob'
+                    }
+                }
+            }
+        }
+        
+        stage('Deploy to Artifactory') {
+            steps {
+                 catchError(buildResult: 'FAILURE', stageResult: 'FAILURE'){
+                     script {
+                         // Deploy artifacts to JFrog Artifactory
+                         bat 'mvn deploy -DuniqueVersion=true -DskipTests -Dusername="%ARTIFACTORY_USERNAME%" -Dpassword="%ARTIFACTORY_PASSWORD%" -f C:/ProgramData/Jenkins/.jenkins/workspace/nagpDevopsPipeLineJob'
+                     }
+                 }
+            }
+        }
+    }
+}
